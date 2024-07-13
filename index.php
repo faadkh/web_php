@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,6 +23,12 @@
             </ul>
         </div>
         <div class="body_main">
+        <?php 
+include("config.php");
+$mysqli = "SELECT * FROM ui";
+$qury = mysqli_query($conn, $mysqli) or die("fail");
+if(mysqli_num_rows($qury)){
+?>
         <table class="table table-striped">
             <thead>
                 <tr>
@@ -33,33 +40,24 @@
                 </tr>
             </thead>
             <tbody>
+                <?php while($row = mysqli_fetch_assoc($qury)){
+
+                ?>
                 <tr>
-                    <td>01</td>
-                    <td>Fahad</td>
-                    <td>faadkh05@gmail.com</td>
-                    <td>03168927749</td>
-                    <td>05/10/1999</td>
+                    <td><?php echo $row["id"];?></td>
+                    <td><?php echo $row["name"];?></td>
+                    <td><?php echo $row["email"];?></td>
+                    <td><?php echo $row["phone"];?></td>
+                    <td><?php echo $row["dob"];?></td>
                 </tr>
-                <tr>
-                    <td>02</td>
-                    <td>Faraz</td>
-                    <td>farazkh01@gmail.com</td>
-                    <td>03168928849</td>
-                    <td>05/10/1997</td>
-                </tr>
-                <tr>
-                    <td>03</td>
-                    <td>Farhan</td>
-                    <td>farhan@gmail.com</td>
-                    <td>03168921239</td>
-                    <td>05/10/2000</td>
-                </tr>
+                <?php }
+                 ?>
             </tbody>
         </table>
         </div>
     </div>   
 
-
+<?php }?>
 
 </body>
 </html>
