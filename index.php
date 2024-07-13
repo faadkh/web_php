@@ -6,8 +6,25 @@
     <title>Document</title>
 </head>
 <body>
-    <h1><?php     
-    echo"hello Pakistan";
-    ?></h1>
+    <div class="main">
+        <div class="nav">
+            <h1>PHP PROJECT FOR PERECTICE</h1>
+        </div>
+        <div class="sidebar">
+            <h2>Actions</h2>
+            <ul>
+                <li>Create</li>
+                <li>Read</li>
+                <li>Update</li>
+                <li>Delete</li>
+            </ul>
+        </div>
+        <div class="body_main">
+
+        </div>
+    </div>   
+
+
+
 </body>
 </html>
